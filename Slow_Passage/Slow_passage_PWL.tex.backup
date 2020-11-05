@@ -1,0 +1,254 @@
+\documentclass[a4paper,preprint,11pt]{article}
+\usepackage{setspace}
+%\doublespacing
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{paralist} 
+\usepackage{graphics} 
+\usepackage{epsfig} 
+\usepackage{ulem}
+\usepackage[pagewise]{lineno}\linenumbers
+%\reversemarginpar
+%\usepackage[colorinlistoftodos]{todonotes}
+%\usepackage{epstopdf}% To incorporate .eps illustrations using PDFLaTeX, etc.
+%\usepackage{subfigure}% Support for small, `sub' figures and tables
+%\usepackage[colorinlistoftodos]{todonotes}
+%\usepackage[utf8]{inputenc}
+%\usepackage{epsfig}
+%\usepackage{graphics}
+%\usepackage{amsmath}
+%\usepackage{amssymb}
+%\usepackage{bm}
+%\usepackage{ulem}
+%\usepackage{geometry}
+% \geometry{a4paper,
+% total={170mm,257mm},
+% left=20mm,
+% top=20mm,}
+% \usepackage{setspace}
+%\doublespacing
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\AT}[1]{\textcolor{blue}{{#1}}}
+\newcommand{\XAT}[1]{\xout{\textcolor{blue}{{#1}}}}
+\title{Slow-passage through a Hopf-like bifurcation} 
+%
+\author{}
+%
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\end{abstract}
+
+\pagestyle{myheadings}
+\thispagestyle{plain}
+
+\section{Introduction}
+
+We use this minimal model to reproduce the slow passage through a Hopf bifurcation in the PWL context
+\begin{align}
+\dot{x} & =f(x)-y\\
+\dot{y} & =x-a
+\end{align}   
+with 
+\[
+f(x)=\left\{
+\begin{array}{ll}
+-mx & x\leq 0,\\
+kx & x \geq 0
+\end{array}
+\right.
+\]
+This system exhibits an unique equilibrium at $(a,f(a))$ and the Jacobian matrix at the equibrium is 
+\[
+ \begin{pmatrix}
+  f'(a) & -1\\
+  1	& 0
+ \end{pmatrix}
+\]
+then, the equilibrium point changes its stability at $a=0$ passing from being stable at $a<0$ to being unstable at $a>0$. Assuming $0<k<m<2$, then the system exhibits a supercritical Hopf bifurcation at $a=0$.
+
+We now consider a slow drift on the parameter $a(t)=a_0+\varepsilon t$ to force a slow passage through the Hopf.  
+
+Following we present some simulations showing the effect of the slow passage in the PWL setting, see Figure 1 and Figure 2. 
+
+\begin{figure}[h!]
+  \begin{center}
+  \includegraphics[width=9cm]{Sp_PWL_dibu1.eps}
+  \end{center}
+  \caption{Coordinate $x(t)$ versus $t$ for parameters $m=0.2,k=0.1,a_0=-1,\varepsilon=0.05$. The point corresponds with the Hopf. It can be observed the delay in the amplitude due to the passage through the Hopf.}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{tabular}{cc}
+    \includegraphics[width=6.5cm]{Sp_PWL_dibu2.eps} 
+    &
+    \includegraphics[width=6.5cm]{Sp_PWL_dibu3.eps}
+  \end{tabular}
+  \caption{Coordinate $x(t)$ versus $t$ for parameters $k=0.1,\varepsilon=0.05$ and different values of $m$ and $a_0$. (a) For $m=0.2$, blue curve corresponds to $a_0=-1$, black curve to $a_0=-0.2$ and red curve to $a_0=0$. The delay in the amplitude seems not to be dependent on the the nevative parameter $a_0$ is. (b) For $m=1$, black curve corresponds to $a_0=-2$, blue curve to $a_0=-0.45$ and red curve to $a_0=0$. In this case, the delay in the amplitude due to the passage through the Hopf is the same for the three solutions It is probably due to the increase in the contraction as we have increased parameter $m$, which force that three solutions seems the same as they arrive at the Hopf point. Moreover, the delay is smaller than the delay in the previous examples, note that solutions achieve the expected amplitude at time 100 approx.}
+\end{figure}
+
+
+% \begin{figure}[h!]
+%   \begin{center}
+%   \includegraphics[width=9cm]{Sp_PWL_dibu2.eps}
+%   \end{center}
+%   \caption{Coordinate $x(t)$ versus $t$ for parameters $m=0.2,k=0.1,\varepsilon=0.05$ and different values of $a_0$. Thus, blue curve corresponds to $a_0=-1$, black curve to $a_0=-0.2$ and red curve to $a_0=0$. It can be observed that the delay in the amplitude due to the passage through the Hopf is bigger as the value of $a_0$ is more negative.}
+% \end{figure}
+% 
+% 
+% \begin{figure}[h!]
+%   \begin{center}
+%   \includegraphics[width=8cm]{Sp_PWL_dibu3.eps}
+%   \end{center}
+%   \caption{Coordinate $x(t)$ versus $t$ for parameters $m=1,k=0.1,\varepsilon=0.05$ and different values of $a_0$. Thus, black curve corresponds to $a_0=-2$, blue curve to $a_0=-0.45$ and red curve to $a_0=0$. In this case, the delay in the amplitude due to the passage through the Hopf is the same for the three solutions It is probably due to the increase in the contraction as we have increased parameter $m$, which force that three solutions seems the same as they arrive at the Hopf point. Moreover, the delay is smaller than the delay in the previous examples, note that solutions achieve the expected amplitude at time 100 approx.}
+% \end{figure}
+
+\begin{figure}[ht]
+  \begin{center}
+  \includegraphics[width=8cm]{Sp_PWL_dibu4.eps}
+  \end{center}
+  \caption{Representation of the delay versus the $a_0$ parameter in the PWL version of the Morris-Lecar model. It can be seen that after a maximun in the delay, the delay saturates and remains constant. This fact could be explained from Figure 3.   
+}
+\end{figure}
+
+\begin{remark} It could be concluded that the slow passage through the Hopf-like in the PWL context does not behave in the same way that it does through the classical Hopf bifurcation. We note that the contraction effect of the slow manifold depends on the real part of the eigenvalues of the Jacobian matrix. Hence, the smaller is the real part of the eigenvalues, the smaller is the contraction effect, and the solutions for different values of $a_0$ remains different at the Hopf point. Thus the delay is different for different values of $a_0$. On the contrary the bigger is the real part of the eigenvalues, the  bigger is the contraction, and thus solutions for different values of $a_0$ seems to be equal at the Hopf point. Therefore, the delay is the same for every  $a_0$. 
+
+In the smooth context the eigenvalues varies when the parameter does, which implies that close to the fold its real part is small, which implies the existence of different delays for different values of $a_0$. On the contrary, in the PWL context, the eigenvalues do not change with the parameter, so when $m$ is big enough the contraction makes all solutions to seem the same at the Hopf point, so that the delay is the same for every $a_0$.
+\end{remark}
+
+\section{Analytical approach}
+
+The local expression of the flow is \\
+\textsc{It is necessary to check that following expressions are correct}
+
+\begin{align*}
+x_L(t)&=a(t)-m\varepsilon+
+  e^{-\frac {m}{2}t} \left(
+      C_1 \cos\left(\frac {\sqrt{4-m^2}}2t \right)+
+      C_2 \sin\left(\frac {\sqrt{4-m^2}}2t \right)
+    \right),\\
+y_L(t)&=-m(a(t)-m\varepsilon)-\varepsilon\\
+  &+e^{-\frac {m}{2}t} \left(
+      -\frac{C_2\sqrt{4-m^2}+C_1m}2 \cos\left(\frac {\sqrt{4-m^2}}2t \right)
+      +\frac{C_1\sqrt{4-m^2}-C_2 m}2 \sin\left(\frac {\sqrt{4-m^2}}2t \right)
+    \right),
+\end{align*}
+on the left region, and 
+\begin{align*}
+x_R(t)&=a(t)-k\varepsilon+
+  e^{\frac {k}{2}t} \left(
+      D_1 \cos\left(\frac {\sqrt{4-k^2}}2t \right)+
+      D_2 \sin\left(\frac {\sqrt{4-k^2}}2t \right)
+    \right),\\
+y_R(t)&=k(a(t)-k\varepsilon)-\varepsilon\\
+  &+e^{\frac {k}{2}t} \left(
+      \frac{kD_1-D_2\sqrt{4-k^2}}2 \cos\left(\frac {\sqrt{4-k^2}}2t \right)
+      +\frac{kD_2+D_1\sqrt{4-k^2}}2 \sin\left(\frac {\sqrt{4-k^2}}2t \right)
+    \right)
+\end{align*}
+on the right region.
+
+\begin{table}[ht]
+ %   \centering
+    \begin{tabular}{ccc}
+	$\epsilon=0.05$ & $\epsilon=0.01$ & $\epsilon=0.005$  \\
+    \includegraphics[scale=0.2]{m02e005.png} & \includegraphics[scale=0.2]{m02e001.png} & \includegraphics[scale=0.2]{m02e0005.png}  \\
+                        & $m=0.2$   &  \\
+    \includegraphics[scale=0.2]{m1e005.png} & \includegraphics[scale=0.2]{m1e001.png} & \includegraphics[scale=0.2]{m1e0005.png}  \\
+			& $m=1$   &  \\
+    \includegraphics[scale=0.2]{m175e005.png} & \includegraphics[scale=0.2]{m175e001.png} & \includegraphics[scale=0.2]{m175e0005.png}  \\
+			& $m=1.75$   &  \\
+    \includegraphics[scale=0.2]{m25e005.png} & \includegraphics[scale=0.2]{m25e001.png} & \includegraphics[scale=0.2]{m25e0005.png}  \\
+			& $m=2.5$   &  
+    \end{tabular}
+    \caption{\textbf{Slow passage through a PWL Hopf for $k=0.1$ and different values of $m$ and $\epsilon$}. From these simulations it can be concluded that parameter $m$, that is, the divergence of the system, is related with the shape of the graph of the function input-output. Moreover, the parameter $\varepsilon$, that is the velocity of the passage, is related with the size of the delay but also with a translation of the graph. Both efect seem to be  $O(\varepsilon)$.
+    }
+    \label{tab:plots}
+\end{table}
+
+
+
+\section{Geometrical approach}
+
+Consider the 3D version of the problem given by 
+\[
+\dot{\mathbf{u}}=
+  \left\{
+	\begin{array}{ll}
+	  A_{-}\mathbf{u}+\mathbf{b} & \text{if } u_1 \leq 0 \\
+	  A_{+}\mathbf{u}+\mathbf{b} & \text{if } u_1 \geq 0 ç
+	\end{array}
+  \right.,
+\]
+where
+\[
+ A_-=\begin{pmatrix}
+      -m & -1 & 0 \\
+      1 & 0 & -1\\
+      0 & 0 & 0
+     \end{pmatrix},\quad
+ A_+=\begin{pmatrix}
+      k & -1 & 0 \\
+      1 & 0 & -1\\
+      0 & 0 & 0
+     \end{pmatrix},\quad
+ \mathbf{b}=\begin{pmatrix}
+      0 \\
+      0 \\
+      \varepsilon 
+     \end{pmatrix},     
+\]
+
+For $\varepsilon =0$, it is known that the system exhibits two invariant sets. One of these invariant sets is given by a poligonal line 
+\[
+ \left\{
+    \begin{array}{ll}
+      (x,-mx,x) & \text{if }x\leq 0\\
+      (x,kx,x)  & \text{if }x\geq 0      
+    \end{array}
+ \right.
+\]
+which is the critical manifold $\mathcal{S}_0$ of the problem and has two branches one attracting (for $x\leq 0$) and one repelling (for $x\geq 0$). The other invariant set is a stable cone foliated by periodic orbits, see Figure \ref{fig:invsets}(a).
+
+\begin{figure}[ht]
+ \begin{center}
+    \includegraphics[width=3.7cm]{Sp_PWL_Invset_eps0.eps}\;\;  
+    \includegraphics[width=3.7cm]{Sp_PWL_Invset_epsg0.eps}\quad\quad\;
+    \includegraphics[width=3.7cm]{Sp_PWL_x0_epsg0.eps}  
+    \begin{picture}(0,0)
+      \put(-310,0){(a)}
+      \put(-185,0){(b)}
+      \put(-135,150){(c.1)}
+      \put(-135,10){(c.2)}
+    \end{picture}
+ \end{center}
+ \caption{\textbf{Invariant objects before and after perturbation:} (a) Slow flow defined over the critical manifold and stable invariant manifold under the fast flow. (b) Attracting and repelling branches of the slow manifold appearing after perturbation of the critical manifold and their intersection points, $\mathbf{p}_{-}=(0,-\varepsilon,m\varepsilon)$ (blue point)  and $\mathbf{p}_{+}=(0,-\varepsilon,-k\varepsilon)$ (red point), with the switching plane $\{x=0\}$ . (c) Image on the switching plane of the attracting branch of the critical manifold by the flow in the half-space $x<0$, (c.1) under focus conditions, (c.2) under node conditions} \label{fig:invsets}
+\end{figure}
+
+After perturbation $\varepsilon>0$ see Figure \ref{fig:invsets}(b), the critical manifold perturbs in a slow manifold $\mathcal{S}_{\varepsilon}$ formed by two segments which are the attracting branch $\mathcal{S}_{\varepsilon}^a$ and the repelling branch $\mathcal{S}_{\varepsilon}^r$ given by the solutions 
+\begin{align*}
+ u_{-}(t)&=\begin{pmatrix} 0 \\ -\varepsilon \\ m\varepsilon \end{pmatrix} +
+ \varepsilon t \begin{pmatrix} 1 \\ -m \\ 1 \end{pmatrix},\quad t\leq 0 \\
+ u_{+}(t)&=\begin{pmatrix} 0 \\ -\varepsilon \\ -k\varepsilon \end{pmatrix} +
+ \varepsilon t \begin{pmatrix} 1 \\ k \\ 1 \end{pmatrix},\quad t \geq 0
+\end{align*}
+intersecting the plane $\{x=0\}$ are at a distance $O(\varepsilon)$ of the intersection point of critical manifold at the origin.  
+
+\begin{remark}
+ The point $\mathbf{p}_-=(0,-\varepsilon,m\varepsilon)$ gives the asymptotic value of the graph of the delay. 
+\end{remark}
+
+
+\end{document}
